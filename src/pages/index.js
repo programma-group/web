@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BlueBackground from "../images/bg_blue.jpg"
 import SintesisLogo from "../images/logos/sintesis_white.svg"
+import GithubIcon from "../images/icons/github/active.svg"
+import TwitterIcon from "../images/icons/twitter/active.svg"
 
 const WrapperDiv = styled.div`
   position: relative;
@@ -55,6 +57,27 @@ const Text = styled.h1`
   font-size: 3rem;
 `
 
+const iconSize = '2.5rem';
+
+const IconWrapper = styled.div`
+  display: flex;
+  position: absolute;
+  left: 3rem;
+  bottom: 3rem;
+  width: 6rem;
+  height: ${iconSize};
+  justify-content: space-between;
+`
+
+const Icon = styled.img`
+  width: ${iconSize};
+  height: ${iconSize};
+  filter: saturate(0%) opacity(70%);
+  &:hover, &:active {
+    filter: saturate(100%) opacity(100%);
+  }
+`
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -65,6 +88,14 @@ const IndexPage = () => (
           <Logo src={SintesisLogo} alt="Logo" />
           <Text>database design</Text>
         </WrapperLogo>
+        <IconWrapper>
+          <a href="https://github.com/programma-group">
+            <Icon src={GithubIcon} alt="Github" />
+          </a>
+          <a href="https://twitter.com/programmagroup">
+            <Icon src={TwitterIcon} alt="Twitter" />
+          </a>
+        </IconWrapper>
       </WrapperProgrammaDesc>
     </WrapperDiv>
   </Layout>
