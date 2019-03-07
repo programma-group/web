@@ -2,6 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from 'styled-components'
+import GlobalStyle from './globalstyle'
+
+const theme = {
+  blue: '#243343',
+  yellow: '#d7cf3d',
+  white: '#f3f3f3',
+}
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -15,8 +22,9 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <ThemeProvider theme={{}}>
+      <ThemeProvider theme={theme}>
         <>
+          <GlobalStyle />
           {children}
         </>
       </ThemeProvider>
